@@ -3,13 +3,33 @@ plugins {
     id 'org.springframework.boot' version '3.3.0'
     id 'io.spring.dependency-management' version '1.1.5'
     id "com.diffplug.spotless" version "6.25.0"
+    id "maven-publish"
 }
 
-group 'rocks.inspectit.gepard.config'
+group 'rocks.inspectit.gepard'
 version = "0.0.1-SNAPSHOT"
 
 sourceCompatibility = "17"
 targetCompatibility = "17"
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/inspectIT/inspectit-gepard-config")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
 
 configurations {
     compileOnly {
