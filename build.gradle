@@ -14,7 +14,7 @@ targetCompatibility = "17"
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        create("jar", MavenPublication) {
             from components.java
         }
     }
