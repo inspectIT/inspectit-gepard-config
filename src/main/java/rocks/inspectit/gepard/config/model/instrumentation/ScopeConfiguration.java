@@ -17,9 +17,9 @@ import lombok.NoArgsConstructor;
 @Getter
 public class ScopeConfiguration {
 
+  private boolean enabled = false;
+
   @NotNull(message = "Fqn is missing.") private String fqn;
 
   @Valid @NotNull private List<@NotNull String> methods = List.of();
-
-  private boolean enabled = false;
 }
