@@ -40,6 +40,6 @@ jobs:
 
       - name: Publish Snapshot to GitHub Packages
         if: github.ref != 'refs/heads/main'
-        run: ./gradlew publish -Prelease.releaseVersion=${{github.ref_name}}
+        run: ./gradlew publish -Pversion=${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
