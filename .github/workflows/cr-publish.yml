@@ -6,8 +6,7 @@ name: GitHub Packages Continuous Release
 on:
   push:
     tags:
-      - "[0-9]+.[0-9]+.[0-9]+*"   # Standard versions, like 1.2.3
-      - "[0-9]+.[0-9]+.[0-9]+-*"  # Pre-release versions, like 1.2.3-dev
+      - "[0-9]*.[0-9]*.[0-9]**"
 
 jobs:
   publish:
