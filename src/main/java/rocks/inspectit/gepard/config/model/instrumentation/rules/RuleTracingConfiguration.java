@@ -15,6 +15,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 public class RuleTracingConfiguration {
 
+  /** The configuration representing that no tracing will be done by inspectIT */
+  public static final RuleTracingConfiguration NO_TRACING = new RuleTracingConfiguration();
+
   /** If true, the methods, which are matched by the rule will appear in traces. */
   @Valid @NotNull private Boolean startSpan = false;
 }
