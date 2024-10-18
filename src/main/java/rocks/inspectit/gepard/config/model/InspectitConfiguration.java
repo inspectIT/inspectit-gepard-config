@@ -3,6 +3,7 @@ package rocks.inspectit.gepard.config.model;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import rocks.inspectit.gepard.config.model.instrumentation.InstrumentationConfiguration;
@@ -11,6 +12,7 @@ import rocks.inspectit.gepard.config.model.instrumentation.InstrumentationConfig
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@EqualsAndHashCode
 public class InspectitConfiguration {
 
   @Valid private InstrumentationConfiguration instrumentation = new InstrumentationConfiguration();
