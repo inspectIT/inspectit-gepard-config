@@ -33,5 +33,5 @@ public class RuleConfiguration {
   @Valid @NotNull private Map<@NotNull @NotEmpty String, @NotNull Boolean> scopes = Map.of();
 
   /** Stores all configuration options related to tracing. */
-  @Valid @NotNull private RuleTracingConfiguration tracing = new RuleTracingConfiguration();
+  @Valid @NotNull private RuleTracingConfiguration tracing = RuleTracingConfiguration.NO_TRACING;
 }

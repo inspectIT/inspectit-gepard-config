@@ -4,8 +4,9 @@ package rocks.inspectit.gepard.config.model.instrumentation;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -33,9 +34,11 @@ public class InstrumentationConfiguration {
 
   /**
    * @param fqn the fully qualified name of a class
-   * @return the list of scopes, which address the provided fqn
+   * @return the set of scopes, which address the provided fqn
    */
-  public List<ScopeConfiguration> getAllMatchingScopes(@NotNull String fqn) {
-    return scopes.values().stream().filter(scope -> scope.getFqn().equals(fqn)).toList();
+  public Set<ScopeConfiguration> getAllMatchingScopes(@NotNull String fqn) {
+    return scopes.values().stream()
+        .filter(scope -> scope.getFqn().equals(fqn))
+        .collect(Collectors.toSet());
   }
 }
