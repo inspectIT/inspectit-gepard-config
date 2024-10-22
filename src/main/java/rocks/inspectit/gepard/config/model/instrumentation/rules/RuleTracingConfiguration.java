@@ -19,5 +19,5 @@ public class RuleTracingConfiguration {
   public static final RuleTracingConfiguration NO_TRACING = new RuleTracingConfiguration();
 
   /** If true, the methods, which are matched by the rule will appear in traces. */
-  @Valid @NotNull private Boolean startSpan = false;
+  @Valid @NotNull private boolean startSpan = false;
 }
