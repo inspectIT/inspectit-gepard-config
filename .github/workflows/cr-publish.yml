@@ -31,7 +31,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      - name: Publish Snapshot to GitHub Packages
+      - name: Publish to GitHub Packages
         run: ./gradlew publish -Pversion=${{ github.ref_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
