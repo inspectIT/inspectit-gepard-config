@@ -12,9 +12,7 @@ sourceCompatibility = "17"
 targetCompatibility = "17"
 
 // we don't have a main class
-bootJar {
-    enabled = false
-}
+bootJar.enabled = false
 
 publishing {
     publications {
